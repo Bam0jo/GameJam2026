@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://ch1xf2bgujlx3"]
+
+[ext_resource type="Script" uid="uid://c4ypw1vd1eynu" path="res://enemy.gd" id="1_7k104"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7xaro"]
+
+[node name="enemybody2D" type="CharacterBody2D"]
+script = ExtResource("1_7k104")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_7xaro")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
