@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2q6v8x4fiwg1"
-path="res://.godot/imported/enemyFlyingAlt_1.png-d10e662d6a88b25695f75ffe1bbe6070.ctex"
+uid="uid://cuh5xxugv0yal"
+path="res://.godot/imported/TX Shadow Plant.png-310a636382e33f64350ea22beb55ada3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://dodge_the_creeps_2d_assets/dodge_the_creeps_2d_assets/art/enemyFlyingAlt_1.png"
-dest_files=["res://.godot/imported/enemyFlyingAlt_1.png-d10e662d6a88b25695f75ffe1bbe6070.ctex"]
+source_file="res://assets/map_tileset/Pixel Art Top Down - Basic v1.2.3/Texture/TX Shadow Plant.png"
+dest_files=["res://.godot/imported/TX Shadow Plant.png-310a636382e33f64350ea22beb55ada3.ctex"]
 
 [params]
 

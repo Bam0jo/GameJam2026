@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dbra4wcmohink"
-path="res://.godot/imported/enemyFlyingAlt_2.png-97657f6198716df821424ee798a5cf0d.ctex"
+uid="uid://cdwpiqq2httxt"
+path="res://.godot/imported/TX Tileset Grass.png-41fc0bb2a4515ecca28e19dc6ef60a40.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://dodge_the_creeps_2d_assets/dodge_the_creeps_2d_assets/art/enemyFlyingAlt_2.png"
-dest_files=["res://.godot/imported/enemyFlyingAlt_2.png-97657f6198716df821424ee798a5cf0d.ctex"]
+source_file="res://assets/map_tileset/Pixel Art Top Down - Basic v1.2.3/Texture/TX Tileset Grass.png"
+dest_files=["res://.godot/imported/TX Tileset Grass.png-41fc0bb2a4515ecca28e19dc6ef60a40.ctex"]
 
 [params]
 
