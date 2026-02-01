@@ -24,29 +24,16 @@ var CURMASK = MASK.MASKFIRE
 
 #if curmask is earth it can kill water
 
-func _unhandled_key_input(event):
-	if event is InputEventKey and event.pressed:
-		match event.keycode:
-			KEY_1:
-				CURMASK = MASK.MASKFIRE
-			KEY_2:
-				CURMASK = MASK.MASKWATER
-			KEY_3:
-				CURMASK = MASK.MASKGRASS
-			KEY_4:
-				CURMASK = MASK.MASKEARTH
-		print("Switched to: ", CURMASK)
-	
 '''based on whether the right mask has been presented the enemy dies'''
-func mask_mechanics():
-	absorb()
-	queue_free()
-	
-func absorb():
-	currhorde = currhorde + 1
-	#spawn a player object that statically follows the horde. 
-	# add to horde
-	
+#func mask_mechanics():
+	#absorb()
+	#queue_free()
+	#
+#func absorb():
+	#currhorde = currhorde + 1
+	##spawn a player object that statically follows the horde. 
+	## add to horde
+	#
 
 func _on_hit_by_player(CURMASK):
 	var can_die = false
@@ -60,7 +47,6 @@ func _on_hit_by_player(CURMASK):
 		MASK.MASKGRASS:
 			if CURMASK == MASK.MASKFIRE: can_die = true
 			
-	
 
 
 '''interacts with move_and_slide()'''
