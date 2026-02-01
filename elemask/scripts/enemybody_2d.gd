@@ -4,16 +4,17 @@ extends CharacterBody2D
 var box_size: Vector2 = Vector2(1152,648) #box area
 var start_pos: Vector2 = Vector2(250,250) #center of box area
 var direction: Vector2 = Vector2.RIGHT #it's initial movement direction (to be updated)
-const currhorde: int = 0
-
+var currhorde: int = 0
+const speed = 200.0
+@export var enemy_element: MASK = MASK.MASKFIRE
 
 #player mask code
-enum MASK { maskfire,
-			maskwater,
-			maskgrass,
-			maskearth,
+enum MASK { MASKFIRE, #0
+			MASKWATER, #1
+			MASKGRASS, #2
+			MASKEARTH, #3
 }
-const CURMASK: Array[int] = [MASK.maskfire, MASK.maskwater, MASK.grass, MASK.maskearth]
+var CURMASK = MASK.MASKFIRE
 
 #if curmask is water it can kill fire
 
@@ -23,9 +24,44 @@ const CURMASK: Array[int] = [MASK.maskfire, MASK.maskwater, MASK.grass, MASK.mas
 
 #if curmask is earth it can kill water
 
+func _unhandled_key_input(event):
+	if event is InputEventKey and event.pressed:
+		match event.keycode:
+			KEY_1:
+				CURMASK = MASK.MASKFIRE
+			KEY_2:
+				CURMASK = MASK.MASKWATER
+			KEY_3:
+				CURMASK = MASK.MASKGRASS
+			KEY_4:
+				CURMASK = MASK.MASKEARTH
+		print("Switched to: ", CURMASK)
+	
+'''based on whether the right mask has been presented the enemy dies'''
+func mask_mechanics():
+	absorb()
+	queue_free()
+	
+func absorb():
+	currhorde = currhorde + 1
+	#spawn a player object that statically follows the horde. 
+	# add to horde
+	
 
+func _on_hit_by_player(CURMASK):
+	var can_die = false
+	match enemy_element:
+		MASK.MASKFIRE:
+			if CURMASK == MASK.MASKWATER: can_die = true
+		MASK.MASKWATER:
+			if CURMASK == MASK.MASKEARTH: can_die = true
+		MASK.MASKEARTH:
+			if CURMASK == MASK.MASKEARTH: can_die = true
+		MASK.MASKGRASS:
+			if CURMASK == MASK.MASKFIRE: can_die = true
+			
+	
 
-const speed = 200.0
 
 '''interacts with move_and_slide()'''
 func _physics_process(delta: float) -> void:
@@ -55,29 +91,7 @@ func _dvd_physics(_delta):
 		@warning_ignore("standalone_expression") #added warning ignore to make it less annoying.
 		direction.y -abs(direction.y) #bounce upwards
 
-func despawn():
-	
-	pass
-	
-func absorb():
-	currhorde + 1
-	# add to horde
-	#spawn a player object that statically follows the horde. 
-
-	
-		
-'''based on whether the right mask has been presented the enemy dies'''
-func mask_mechanics():
-	if curmask == MASK.maskfire:
-		despawn()
-
-	if curmask == MASK.maskgrass:
-		despawn()
-
-	if curmask == MASK.maskearth:
-		despawn()
-	if curmask == MASK.maskwater:
-		despawn()
 
 		
+
 		
