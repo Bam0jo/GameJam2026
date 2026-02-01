@@ -1,6 +1,6 @@
 extends CharacterBody2D
-#global
 
+#globalvar
 var box_size: Vector2 = Vector2(1152,648) #box area
 var start_pos: Vector2 = Vector2(250,250) #center of box area
 var direction: Vector2 = Vector2.RIGHT #it's initial movement direction (to be updated)
