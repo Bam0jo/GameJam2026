@@ -14,5 +14,3 @@ shape = SubResource("CapsuleShape2D_wvlr3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("ImageTexture_7pfqn")
-
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
