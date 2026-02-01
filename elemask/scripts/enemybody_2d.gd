@@ -1,8 +1,9 @@
 extends CharacterBody2D
+#global
 
-var box_size: Vector2 = Vector2(500,500) #box area
+var box_size: Vector2 = Vector2(1152,648) #box area
 var start_pos: Vector2 = Vector2(250,250) #center of box area
-var direction: Vector2 = Vector2.RIGHT #it's first movement direction (to be updated)
+var direction: Vector2 = Vector2.RIGHT #it's initial movement direction (to be updated)
 
 const speed = 200.0
 
@@ -29,3 +30,5 @@ func _dvd_physics(delta):
 		direction.y = abs(direction.y) #bounce downards
 	elif position.y >start_pos.y + box_size.y / 2:
 		direction.y -abs(direction.y) #bounce upwards
+		
+		
