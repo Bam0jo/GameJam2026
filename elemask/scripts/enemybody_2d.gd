@@ -14,11 +14,15 @@ enum MASK { maskfire,
 			maskearth,
 }
 const CURMASK: Array[int] = [MASK.maskfire, MASK.maskwater, MASK.grass, MASK.maskearth]
+
 #if curmask is water it can kill fire
 
 #if curmask is fire it can kill wind
 
+#if curmask is wind it can kill earth
+
 #if curmask is earth it can kill water
+
 
 
 const speed = 200.0
